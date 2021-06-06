@@ -13,7 +13,9 @@ const Calculator = () => {
         case 'div':
             return setResult(Number(x) / Number(y))
         case 'mul':
-            return setResult(Number(x) * Number(y))            
+            return setResult(Number(x) * Number(y))
+        default:
+            return setResult('Please provide a valid number for both operands')                
     }
 }
 
