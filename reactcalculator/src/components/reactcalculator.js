@@ -2,10 +2,15 @@ import React, { useState } from 'react'
 
 
 const Calculator = () => {
-   
+   const [x, setX] = useState('')
+   const [operator, setOperator] = useState('')
+   const [y, setY] = useState('')
+   const [result, setResult] = useState('')
+
+   const calculate = () => { 
     setResult('')
 
-    switch (operation) {
+    switch (operator) {
         case 'add':
             return setResult(Number(x) + Number(y))
         case 'sub':
@@ -17,6 +22,12 @@ const Calculator = () => {
         default:
             return setResult('Please provide a valid number for both operands')                
     }
+}
+    return (
+        <div>
+            
+        </div>
+    )
 }
 
 export default Calculator;
