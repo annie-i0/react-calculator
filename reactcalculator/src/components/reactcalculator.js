@@ -8,19 +8,21 @@ const Calculator = () => {
    const [result, setResult] = useState('')
    const [error, setError] = useState('')
 
-   const calculate = () => { 
-    setResult('')
-    setError('')
-    
-  
-    const aValidNumber = () => {
-        if (!isNaN(NumberOne) && NumberOne !== undefined && NumberOne !== '') {
+    const aValidNumber = (number) => {
+        if (!isNaN(number) && number !== undefined && number !== '') {
           return true
         }
       
-        return setError('Please provide a valid number for both operands') 
+        return false
       }
 
+    const calculate = () => { 
+        setResult('')
+        setError('')
+
+        if (!aValidNumber(NumberOne) || !aValidNumber(NumberTwo)) {
+            return setError('Please provide a valid number for both operands') 
+        }    
 
     switch (operator) {
         case 'add':
