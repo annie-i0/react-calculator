@@ -12,6 +12,15 @@ const Calculator = () => {
     setResult('')
     setError('')
 
+    const aValidNumber = () => {
+        if (!isNaN(NumberOne) || NumberOne !== undefined || NumberOne !== '') {
+          return true
+        }
+      
+        return setError('Please provide a valid number for both operands')
+      }
+
+
     switch (operator) {
         case 'add':
             return setResult(Number(NumberOne) + Number(NumberTwo))
@@ -41,11 +50,11 @@ const Calculator = () => {
                 <input type="text" name="serach" value={NumberTwo} onChange={event =>
                 setNumberTwo(event.target.value)} />
                 <input type="button" value="=" onClick={calculate} />
-                <input type="text" className="display" value={result} disabled /> 
+                <input type="text" className="display" value={result} disabled />
+                <div className="error">{error ? `${error}`: null}</div> 
             </div>
         </div>    
        
-
     )
     
 }
