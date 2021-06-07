@@ -11,13 +11,14 @@ const Calculator = () => {
    const calculate = () => { 
     setResult('')
     setError('')
-
+    
+  
     const aValidNumber = () => {
-        if (!isNaN(NumberOne) || NumberOne !== undefined || NumberOne !== '') {
+        if (!isNaN(NumberOne) && NumberOne !== undefined && NumberOne !== '') {
           return true
         }
       
-        return setError('Please provide a valid number for both operands')
+        return setError('Please provide a valid number for both operands') 
       }
 
 
